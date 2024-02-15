@@ -1,6 +1,12 @@
 Second attempt at a MediatR package technical exercise.
 
-Uses both the MediatR and EntityFrameworkCore Packages.
+Requires the following packages:
+
+1. MediatR
+2. MediatR.Extensions.Microsoft.DependencyInjection
+3. Microsoft.EntityFrameworkCore.SqlServer
+4. Microsoft.EntityFrameworkCore.Tools
+5. Swashbuckle.AspNetCore
 
 Requires a local installation of SQL to run. To initialise the following, run the following commands through the package-manager console:
 
