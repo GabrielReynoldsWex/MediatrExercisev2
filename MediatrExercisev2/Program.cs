@@ -1,6 +1,4 @@
 using MediatR;
-using MediatrExercisev2.Application.Customers.Commands.CreateCustomer;
-using MediatrExercisev2.Application.Customers.Queries.GetCustomers;
 using MediatrExercisev2.Behaviors;
 using MediatrExercisev2.Repository.Context;
 using Microsoft.EntityFrameworkCore;

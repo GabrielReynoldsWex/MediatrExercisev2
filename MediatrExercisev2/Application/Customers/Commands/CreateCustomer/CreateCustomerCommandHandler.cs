@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using MediatrExercisev2.Abstraction.Responses.Customer;
-using MediatrExercisev2.Behaviors;
 using MediatrExercisev2.Repository.Context;
 
 namespace MediatrExercisev2.Application.Customers.Commands.CreateCustomer

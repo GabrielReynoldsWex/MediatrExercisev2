@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrExercisev2.Controllers
 {
-
     [Route("api/customer")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -21,7 +20,12 @@ namespace MediatrExercisev2.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerRequest request) 
         {
-            var customers = await _mediator.Send(new CreateCustomerCommand(request.Name, request.ContactNumber));
+            bool discountBool = false;
+
+            if( request.CustomerDiscount == "true")
+                discountBool = true;
+
+            var customers = await _mediator.Send(new CreateCustomerCommand(request.Name, request.ContactNumber, discountBool));
             return Ok(customers);
         }
 
