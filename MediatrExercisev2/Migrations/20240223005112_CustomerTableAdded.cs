@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MediatrExercisev2.Migrations
 {
     /// <inheritdoc />
-    public partial class ItemTableAdded : Migration
+    public partial class CustomerTableAdded : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -40,7 +40,7 @@ namespace MediatrExercisev2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PurchaseItems",
+                name: "Purchases",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -49,43 +49,21 @@ namespace MediatrExercisev2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PurchaseItems", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_PurchaseItems_Customers_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_PurchaseItems_Items_ItemId",
-                        column: x => x.ItemId,
-                        principalTable: "Items",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Purchases", x => x.Id);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PurchaseItems_CustomerId",
-                table: "PurchaseItems",
-                column: "CustomerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PurchaseItems_ItemId",
-                table: "PurchaseItems",
-                column: "ItemId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PurchaseItems");
-
-            migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Items");
+
+            migrationBuilder.DropTable(
+                name: "Purchases");
         }
     }
 }

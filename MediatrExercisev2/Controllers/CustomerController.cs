@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MediatrExercisev2.Abstraction.Requests.Customer;
 using MediatrExercisev2.Application.Customers.Commands.CreateCustomer;
+using MediatrExercisev2.Application.Customers.Queries;
 using MediatrExercisev2.Application.Customers.Queries.GetCustomers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +29,7 @@ namespace MediatrExercisev2.Controllers
             var customers = await _mediator.Send(new CreateCustomerCommand(request.Name, request.ContactNumber, discountBool));
             return Ok(customers);
         }
-
+    
         [HttpGet]
         public async Task<ActionResult> GetCustomers() 
         {

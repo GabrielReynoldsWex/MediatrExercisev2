@@ -1,28 +1,34 @@
 ﻿using MediatR;
 using MediatrExercisev2.Abstraction.Requests.Purchase;
-using Microsoft.AspNetCore.Components;
+using MediatrExercisev2.Application.Customers.Queries;
+using MediatrExercisev2.Application.ItemPurchases.Commands.CreatePurchase;
 using Microsoft.AspNetCore.Mvc;
-
-using MediatrExercisev2.Application.
 
 namespace MediatrExercisev2.Controllers
 {
-    public class PurchaseController
+    [Route("api/purchase")]
+    [ApiController]
+    public class PurchaseController : ControllerBase
     {
-        [Route("api/purchase")]
-        [ApiController]
-
         private readonly IMediator _mediator;
 
         public PurchaseController(IMediator mediator)
         {
             _mediator = mediator;
         }
-
+        /*
         [HttpPost]
         public async Task<IActionResult> CreatePurchase([FromBody] CreatePurchaseRequest request) 
         {
-            var result = await _mediator.Send(request);
+            var result = await _mediator.Send(new CreatePurchaseCommand(request.CustomerID, request.ProductID));
+            return Ok(result);
+        } */
+
+        [HttpPost]
+        public async Task<IActionResult> GetCustomerDiscountById([FromBody] GetCustomerDiscountByIdQuery query)
+        {
+            var customer = await _mediator.Send(new GetCustomerDiscountByIdQuery(query.CustomerId));
+            return Ok(customer);
         }
     }
 }

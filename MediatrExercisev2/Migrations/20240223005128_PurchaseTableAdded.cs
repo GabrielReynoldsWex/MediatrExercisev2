@@ -5,7 +5,7 @@
 namespace MediatrExercisev2.Migrations
 {
     /// <inheritdoc />
-    public partial class PurchaseItemTableAdded : Migration
+    public partial class PurchaseTableAdded : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

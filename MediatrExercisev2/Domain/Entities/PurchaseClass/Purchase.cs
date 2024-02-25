@@ -9,10 +9,5 @@ namespace MediatrExercisev2.Domain.Entities.PurchaseClass
         public Guid CustomerId { get; set; }
         public Guid ItemId { get; set; }
 
-        public Purchase(Guid customerID, Guid itemID)
-        {
-            CustomerId = customerID;
-            ItemId = itemID;
-        }
     }
 }

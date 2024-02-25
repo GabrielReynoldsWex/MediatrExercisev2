@@ -16,12 +16,12 @@ namespace MediatrExercisev2.Application.Purchases.Commands.CreatePurchase
 
         public async Task<CreatePurchaseDTO> Handle(CreatePurchaseCommand request, CancellationToken cancellationToken)
         { 
-            var itemPurchase = request.CreateItemPurchase(); 
+            var purchase = request.CreatePurchase(); 
 
-            await _dbcontext.ItemPurchases.AddAsync(itemPurchase, cancellationToken);
+            await _dbcontext.Purchases.AddAsync(purchase, cancellationToken);
             await _dbcontext.SaveChangesAsync();
 
-            return new CreatePurchaseDTO(itemPurchase.Id);
+            return new CreatePurchaseDTO(purchase.Id);
         }
     }
 }

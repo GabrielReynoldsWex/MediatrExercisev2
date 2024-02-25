@@ -66,7 +66,7 @@ namespace MediatrExercisev2.Migrations
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("MediatrExercisev2.Domain.Entities.PurchaseItemClass.PurchaseItem", b =>
+            modelBuilder.Entity("MediatrExercisev2.Domain.Entities.PurchaseClass.Purchase", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,30 +80,7 @@ namespace MediatrExercisev2.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("ItemId");
-
-                    b.ToTable("PurchaseItems");
-                });
-
-            modelBuilder.Entity("MediatrExercisev2.Domain.Entities.PurchaseItemClass.PurchaseItem", b =>
-                {
-                    b.HasOne("MediatrExercisev2.Domain.Entities.CustomerClass.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MediatrExercisev2.Domain.Entities.ItemClass.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Item");
+                    b.ToTable("Purchases");
                 });
 #pragma warning restore 612, 618
         }

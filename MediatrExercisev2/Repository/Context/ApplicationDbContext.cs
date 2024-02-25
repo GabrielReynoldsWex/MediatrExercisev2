@@ -11,6 +11,6 @@ namespace MediatrExercisev2.Repository.Context
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Item> Items { get; set; }
-        public DbSet<Purchase> ItemPurchases { get; set;}
+        public DbSet<Purchase> Purchases { get; set;}
     }
 }
