@@ -13,18 +13,8 @@ namespace MediatrExercisev2.Application.Customers.Queries
         {
             CustomerId = customerId;
         }
-    }
 
-    public static class GetCustomerDiscountByIdQueryExtension 
-    {
-        public static GetCustomerDiscountDTO MapTo(string customerName, bool customerDiscount) 
-        {
-            return new GetCustomerDiscountDTO
-            {
-                Name = customerName,
-                CustomerDiscount = customerDiscount
-            };
-        }
+        public GetCustomerDiscountByIdQuery() { }
     }
 
     public class GetCustomerDiscountByIdQueryHandler : IRequestHandler<GetCustomerDiscountByIdQuery, GetCustomerDiscountDTO>

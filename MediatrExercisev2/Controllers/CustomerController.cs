@@ -1,8 +1,7 @@
 ﻿using MediatR;
 using MediatrExercisev2.Abstraction.Requests.Customer;
-using MediatrExercisev2.Application.Customers.Commands.CreateCustomer;
+using MediatrExercisev2.Application.Customers.Commands;
 using MediatrExercisev2.Application.Customers.Queries;
-using MediatrExercisev2.Application.Customers.Queries.GetCustomers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrExercisev2.Controllers

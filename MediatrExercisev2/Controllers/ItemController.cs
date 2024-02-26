@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using MediatrExercisev2.Abstraction.Requests.Item;
-using MediatrExercisev2.Application.Items.Commands.CreateItem;
-using MediatrExercisev2.Application.Items.Queries.GetItems;
+using MediatrExercisev2.Application.Items.Commands;
+using MediatrExercisev2.Application.Items.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrExercisev2.Controllers
